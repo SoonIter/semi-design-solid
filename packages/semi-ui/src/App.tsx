@@ -10,6 +10,5 @@ const App: Component = () => {
     </div>
   );
 };
-console.dir(Button({}))
 
 export default App;
