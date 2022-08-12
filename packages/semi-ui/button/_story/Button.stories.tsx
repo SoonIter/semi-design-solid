@@ -1,19 +1,38 @@
 import { JSX } from 'solid-js/jsx-runtime';
-import SemiButton, { ButtonProps } from '../Button';
+import Button, { ButtonProps } from '../Button';
+import { cssClasses, strings } from '@douyinfe/semi-foundation/button/constants';
+
+const { htmlTypes, btnTypes, sizes, themes } = strings;
 export default {
   title: 'Button',
   argTypes: {
-    content: { control: 'text', value: 'helloll' },
-    backgroundColor: { control: 'color' },
-    label: { control: 'text' },
-    onClick: { action: 'onClick' },
+    content: { control: 'text', value: 'hello world' },
     size: {
       control: { type: 'select' },
-      options: ['default', 'small', 'large'],
+      options: sizes,
     },
+    type: {
+      control: { type: 'select' },
+      options: btnTypes,
+    },
+    theme: {
+      control: { type: 'select' },
+      options: themes,
+    },
+    onClick: { action: 'onClick' },
+    block: { control: 'boolean', value: false },
+    loading: { control: 'boolean', value: false },
+    disabled: { control: 'boolean', value: false },
+    htmlTypes: { control: { type: 'select' }, options: htmlTypes },
   },
 };
-const Button = (props: JSX.IntrinsicAttributes & ButtonProps & { content: string }) => (
-  <SemiButton {...props}>{props.content ?? 'hello'}</SemiButton>
+const Demo = (props: JSX.IntrinsicAttributes & ButtonProps & { content: string }) => (
+  <Button {...props}>{props.content ?? 'hello'}</Button>
 );
-export { Button };
+const DisableDemo = (props: JSX.IntrinsicAttributes & ButtonProps & { content: string }) => (
+  <Button {...props} disabled>
+    {props.content ?? 'hello'}
+  </Button>
+);
+
+export { Demo, DisableDemo };

@@ -1,14 +1,27 @@
-import { Link, Route, Routes } from '@solidjs/router';
-import type { Component } from 'solid-js';
-import Button from '../button/Button';
+import { render } from "solid-js/web";
+import {
+  useContext,
+  createSignal,
+  createContext,
+} from "solid-js";
+import { Child, context } from "./Child";
 
-const App: Component = () => {
-  let count = $signal(0);
+function Counter(props) {
+  const [yes, setYes] = createSignal("yes");
+
   return (
-    <div class="text-center">
-      <Button>123</Button>
-    </div>
+    <context.Provider value={{ a: props.a, b: 20 }}>
+      {/* <button onClick={() => setYes((x) => x + 1)}>{yes}</button> */}
+      {props.children}
+    </context.Provider>
   );
-};
+}
+function App() {
+  return (
+    <Counter a={123}>
+      <Child />
+    </Counter>
+  );
+}
 
 export default App;
