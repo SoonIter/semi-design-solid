@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@7.5.0",
-  "description": "@semi-design-solid",
+  "description": "semi-design-solid monorepo template",
   "author": {
     "name": "SoonIter",
     "email": "1730214056@qq.com"
@@ -42,7 +42,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@semi-design-solid/shared": "workspace:*"
+    "@semi-design-solid/shared":"workspace:*"
   },
   "devDependencies": {
     "@antfu/ni": "^0.16.3",

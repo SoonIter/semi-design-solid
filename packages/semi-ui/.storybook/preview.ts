@@ -1,4 +1,3 @@
-// import { addDecorator, configure } from '@storybook/html';
 import { render } from 'solid-js/web';
 
 export const parameters = {

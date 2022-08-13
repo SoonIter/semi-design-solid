@@ -1,16 +1,23 @@
 import { render } from 'solid-js/web';
-import { useContext, createSignal, createContext, Component, JSX } from 'solid-js';
-import Comp from './absolute_stroked.svg';
+import { useContext, createSignal, createContext } from 'solid-js';
+import { Child, context } from './Child';
+import x from './absolute_stroked.svg';
 
-const Child: Component<{ a: number }> = (props) => {
+function Counter(props) {
   return (
-    <>
-      <Comp />
-    </>
+    <context.Provider value={{ a: props.a, b: 20 }}>
+      {/* <button onClick={() => setYes((x) => x + 1)}>{yes}</button> */}
+      {props.children}
+    </context.Provider>
   );
-};
+}
 function App() {
-  return <Child a={1} />;
+  return (
+    <Counter a={123}>
+      <Child />
+      <img src={x}/>
+    </Counter>
+  );
 }
 
 export default App;
