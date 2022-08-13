@@ -12,6 +12,7 @@
   "dependencies": {
     "@douyinfe/semi-foundation": "workspace:*",
     "@douyinfe/semi-theme-default": "workspace:*",
+    "@semi-design-solid/solid-classlist": "workspace:*",
     "@solidjs/router": "^0.4.2",
     "solid-js": "^1.4.8"
   },
@@ -32,6 +33,7 @@
     "unplugin-auto-import": "^0.11.1",
     "vite": "^3.0.4",
     "vite-plugin-inspect": "^0.6.0",
+    "unplugin-icons": "^0.14.8",
     "vite-plugin-solid": "^2.3.0"
   }
 }

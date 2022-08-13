@@ -1,14 +1,9 @@
-import { render } from "solid-js/web";
-import {
-  useContext,
-  createSignal,
-  createContext,
-} from "solid-js";
-import { Child, context } from "./Child";
+import { render } from 'solid-js/web';
+import { useContext, createSignal, createContext } from 'solid-js';
+import { Child, context } from './Child';
+import x from './absolute_stroked.svg';
 
 function Counter(props) {
-  const [yes, setYes] = createSignal("yes");
-
   return (
     <context.Provider value={{ a: props.a, b: 20 }}>
       {/* <button onClick={() => setYes((x) => x + 1)}>{yes}</button> */}
@@ -20,6 +15,7 @@ function App() {
   return (
     <Counter a={123}>
       <Child />
+      <img src={x}/>
     </Counter>
   );
 }

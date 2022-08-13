@@ -5,6 +5,7 @@ import solidPlugin from 'vite-plugin-solid';
 import Inspect from 'vite-plugin-inspect';
 import solidLabels from 'babel-plugin-solid-labels';
 import { undestructurePlugin } from 'babel-plugin-solid-undestructure';
+import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
   plugins: [
@@ -13,6 +14,9 @@ export default defineConfig({
       babel: {
         plugins: [[solidLabels, { dev: process.env.NODE_ENV !== 'production' }]],
       },
+    }),
+    Icons({
+      compiler: 'solid',
     }),
     AutoImport({
       imports: ['solid-js'],

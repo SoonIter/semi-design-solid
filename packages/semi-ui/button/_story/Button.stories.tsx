@@ -29,10 +29,4 @@ export default {
 const Demo = (props: JSX.IntrinsicAttributes & ButtonProps & { content: string }) => (
   <Button {...props}>{props.content ?? 'hello'}</Button>
 );
-const DisableDemo = (props: JSX.IntrinsicAttributes & ButtonProps & { content: string }) => (
-  <Button {...props} disabled>
-    {props.content ?? 'hello'}
-  </Button>
-);
-
-export { Demo, DisableDemo };
+export { Demo };
