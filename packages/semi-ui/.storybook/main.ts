@@ -1,6 +1,5 @@
 // .storybook/main.ts
 import { mergeConfig } from 'vite';
-import defaultConfig from '../vite.config';
 import type { StorybookViteConfig } from '@storybook/builder-vite';
 
 const config: StorybookViteConfig = {
@@ -14,7 +13,8 @@ const config: StorybookViteConfig = {
     storyStoreV7: true,
   },
   async viteFinal(config) {
-    return mergeConfig(defaultConfig, config);
+    const defaultConfig = await import('../vite.config');
+    return mergeConfig(defaultConfig.default, config);
   },
 };
 export default config;
