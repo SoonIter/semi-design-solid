@@ -1,0 +1,38 @@
+{
+  "name": "@semi-design-solid/semi-icons",
+  "version": "0.0.1",
+  "description": "semi icons",
+  "keywords": [
+    "semi",
+    "icons"
+  ],
+  "author": "",
+  "homepage": "",
+  "main": "lib/cjs/index.js",
+  "module": "lib/es/index.js",
+  "typings": "lib/es/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "svg2comp": "cd ./scripts && node ./svg2comp.mjs && nr lint",
+    "lint": "prettier ./src/icons/*.tsx --write"
+  },
+  "dependencies": {
+    "@semi-design-solid/solid-classlist": "workspace:*"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.2.11"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "_unpkg": true,
+  "unpkgFiles": [
+    "*"
+  ],
+  "gitHead": "eb34a4f25f002bb4cbcfa51f3df93bed868c831a"
+}

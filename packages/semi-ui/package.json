@@ -13,6 +13,7 @@
     "@douyinfe/semi-foundation": "workspace:*",
     "@douyinfe/semi-theme-default": "workspace:*",
     "@semi-design-solid/solid-classlist": "workspace:*",
+    "@semi-design-solid/semi-icons": "workspace:*",
     "@solidjs/router": "^0.4.2",
     "solid-js": "^1.4.8"
   },

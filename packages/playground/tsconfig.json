@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "resolveJsonModule": true,
     "types": ["vite/client", "unplugin-icons/types/solid"]
   },
   "exclude": ["node_modules/"]

@@ -1,0 +1,33 @@
+body[data-page=a11y] {
+  overflow: hidden;
+}
+body[data-page=a11y] #root {
+  padding: 0 !important;
+}
+body[data-page=a11y] #root .semi-slider {
+  padding: 0;
+}
+body[data-page=a11y] #root .rows-container > .semi-row {
+  margin-bottom: 24px;
+}
+body[data-page=a11y] #root .mt12 {
+  margin-top: 12px;
+}
+body[data-page=a11y] #root .mb12 {
+  margin-bottom: 12px;
+}
+body[data-page=a11y] .grid .semi-row,
+body[data-page=a11y] .grid .semi-row-flex {
+  text-align: center;
+}
+body[data-page=a11y] .grid .semi-row .semi-col,
+body[data-page=a11y] .grid .semi-row-flex .semi-col {
+  min-height: 30px;
+  line-height: 30px;
+  background: var(--semi-color-primary-light-default);
+  outline: 1px solid var(--semi-color-primary-light-active);
+}
+body[data-page=a11y] .grid.grid-gutter .semi-col .gutter-box,
+body[data-page=a11y] .grid.grid-gutter .semi-col .col-content {
+  background: var(--semi-color-primary-light-hover);
+}/*# sourceMappingURL=a11y.css.map */

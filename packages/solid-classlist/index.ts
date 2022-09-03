@@ -13,14 +13,15 @@ type clsType<
       >
   : R;
 
-// type test = clsType<["eh", { a: false }, "a", { a: true }]>;
-
 function cls<T extends (string | Record<string, boolean>)[]>(...classNames: T) {
   return classNames.reduce((classList, className) => {
     if (typeof className === "string") {
       // @ts-ignore
       classList[className] = true;
     } else {
+      if (className === null || className === undefined) {
+        return classList;
+      }
       Object.keys(className).forEach((key) => {
         // @ts-ignore
         classList[key] = className[key];

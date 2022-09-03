@@ -1,4 +1,4 @@
-import { add } from "@semi-design-solid/shared";
+import { add } from "../packages/shared";
 import { describe, it, expect } from "vitest";
 
 describe("add", () => {
