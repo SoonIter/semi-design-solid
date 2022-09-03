@@ -3,7 +3,5 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
-  "devDependencies": {
-    "typescript": "^4.7.4"
-  }
+  "devDependencies": {}
 }

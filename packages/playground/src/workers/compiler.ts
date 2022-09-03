@@ -8,7 +8,7 @@ import { rollup } from 'rollup/dist/es/rollup.browser.js';
 import dd from 'dedent';
 import type { Plugin } from 'rollup';
 
-const CDN_URL = (importee: string) => `https://esm.sh/${importee}?dev`;
+export const CDN_URL = (importee: string) => `https://esm.sh/${importee}?dev`;
 
 const tabsLookup = new Map<string, Tab>();
 
@@ -85,7 +85,7 @@ const replPlugin: Plugin = {
   },
 };
 
-async function compile(tabs: Tab[]) {
+async function compile(tabs: Tab[], event: string) {
   for (const tab of tabs) {
     tabsLookup.set(`./${tab.name.replace(/.(tsx|jsx)$/, '')}`, tab);
   }
@@ -95,11 +95,18 @@ async function compile(tabs: Tab[]) {
     plugins: [replPlugin],
   });
 
+  // const {
+  //   output: [{ code, imports }],
+  // } = await compiler.generate({ format: 'esm', inlineDynamicImports: true });
   const {
-    output: [{ code }],
+    output: [{ code, imports }],
   } = await compiler.generate({ format: 'esm', inlineDynamicImports: true });
 
-  return { event: 'ROLLUP', compiled: code as string };
+  if (event === 'ROLLUP') {
+    return { event, compiled: code };
+  } else {
+    return { event, imports };
+  }
 }
 
 async function babel(tab: Tab, compileOpts: any) {
@@ -117,13 +124,10 @@ self.addEventListener('message', async ({ data }) => {
   const { event, tabs, tab, compileOpts } = data;
 
   try {
-    switch (event) {
-      case 'ROLLUP':
-        self.postMessage(await compile(tabs));
-        break;
-      case 'BABEL':
-        self.postMessage(await babel(tab, compileOpts));
-        break;
+    if (event === 'BABEL') {
+      self.postMessage(await babel(tab, compileOpts));
+    } else {
+      self.postMessage(await compile(tabs, event));
     }
   } catch (e) {
     self.postMessage({ event: 'ERROR', error: (e as Error).message });

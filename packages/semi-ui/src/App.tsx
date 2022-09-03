@@ -1,8 +1,7 @@
-import { render } from 'solid-js/web';
-import { useContext, createSignal, createContext, Component, JSX } from 'solid-js';
 import Comp from './absolute_stroked.svg';
 
 const Child: Component<{ a: number }> = (props) => {
+  console.log(Comp);
   return (
     <>
       <Comp />

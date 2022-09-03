@@ -1,0 +1,10 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--semi-color-bg-0);
+  color: var(--semi-color-text-0);
+}
+
+.sb-show-main.sb-main-padded > #root {
+  padding: 20px;
+}/*# sourceMappingURL=index.css.map */

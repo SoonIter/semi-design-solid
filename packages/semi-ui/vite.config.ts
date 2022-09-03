@@ -10,13 +10,13 @@ import Icons from 'unplugin-icons/vite';
 export default defineConfig({
   plugins: [
     ...undestructurePlugin('ts'),
+    Icons({
+      compiler: 'solid',
+    }),
     solidPlugin({
       babel: {
         plugins: [[solidLabels, { dev: process.env.NODE_ENV !== 'production' }]],
       },
-    }),
-    Icons({
-      compiler: 'solid',
     }),
     AutoImport({
       imports: ['solid-js'],

@@ -8,15 +8,27 @@
     "format": "prettier -w ."
   },
   "dependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/plugin-syntax-jsx": "^7.18.6",
+    "@babel/types": "^7.18.10",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
     "@semi-design-solid/shared": "workspace:*",
     "@solidjs/router": "^0.4.2",
     "monaco-editor": "^0.34.0",
     "monaco-editor-textmate": "^3.0.0",
     "monaco-textmate": "^3.0.1",
     "onigasm": "^2.2.5",
-    "solid-js": "^1.4.8"
+    "solid-js": "^1.4.8",
+    "@babel/standalone": "^7.18.12",
+    "dedent": "^0.7.0"
   },
   "devDependencies": {
+    "@types/babel__standalone": "^7.1.4",
+    "@types/dedent": "^0.7.0",
     "@iconify-json/logos": "^1.1.14",
     "@unocss/core": "^0.45.5",
     "@unocss/preset-attributify": "^0.45.5",
